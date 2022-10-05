@@ -112,3 +112,22 @@ const showMessage_1 = ({ firstname, age }) => {
 showMessage(user);
 showMessage_1(user); */
 
+
+
+//////////
+
+
+const incr_btn = document.querySelector('.incr_btn');
+let btn_params = 30;
+
+const incr_btn_render = (params) => {
+    incr_btn.style.width = params + 'px';
+    incr_btn.style.height = params + 'px';
+}
+
+incr_btn_render(btn_params);
+
+incr_btn.addEventListener('click', () => {
+    btn_params += 10;
+    incr_btn_render(btn_params);
+})
