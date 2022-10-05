@@ -7,3 +7,12 @@
     height: 250px;
     object-fit: cover;
 }
+.img_slider_1 {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.triggers button {
+    background-color: green;
+}

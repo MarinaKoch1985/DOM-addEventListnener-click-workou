@@ -74,3 +74,41 @@ const img_slider = document.querySelector('.img_slider');
 
  img_slider.addEventListener('click', event => event.target.src =
  photos[photoIndex++ % photos.length] );
+
+
+ ///////////////////////////////////
+ const img_slider_1 = document.querySelector('.img_slider_1');
+ const [ left_btn, right_btn] = document.querySelectorAll('.triggers button');
+
+ let photoIndex_1 = 0;
+
+ right_btn.addEventListener('click', () => img_slider_1.src = photos[++photoIndex_1 % photos.length]);
+
+ left_btn.addEventListener('click', () => {
+    if(photoIndex_1 === 0) {
+        photoIndex_1 = photos.length
+    }
+
+    img_slider_1.src = photos[--photoIndex_1 % photos.length]
+ });
+ // a++ - сначала возвращает значение, а потом увеличивает его на единицу
+// ++a - сначала увеличивает на единицу, а потом возвращает
+
+
+/* const user = {
+  firstname: 'Anton',
+  lastname: 'Ivanov',
+  age: 38
+}
+
+const showMessage = obj => {
+  console.log(`Hello ${obj.firstname}. You are ${obj.age} years old!`)
+}
+
+const showMessage_1 = ({ firstname, age }) => {
+  console.log(`Hello ${firstname}. You are ${age} years old!`)
+}
+
+showMessage(user);
+showMessage_1(user); */
+
