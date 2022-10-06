@@ -131,3 +131,41 @@ incr_btn.addEventListener('click', () => {
     btn_params += 10;
     incr_btn_render(btn_params);
 })
+
+//Создать генератор бросаемых костей
+
+
+const game_btn = document.querySelector('.game_btn');
+const game_result = document.querySelector('.game_result');
+
+const get_num = () => Math.round(Math.random() * 5 + 1);// 1 - 6 
+
+//Math.random() => дробное от 0 до 1
+//Math.random() * 5 => дробное от 0 до 5
+//Math.random() * 5 + 1 => дробное от 1 до 6
+//Math.round(Math.random() * 5 + 1) => целое от 1 до 6
+
+game_btn.addEventListener('click', () => game_result.innerText = `${get_num()} X ${get_num()}`);
+
+// Создать описанный в форме элемент
+
+const add_form = document.querySelector('.add_form') ;
+const form_result = document.querySelector('add_result');
+
+add_form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const { type, content, color } = event.target
+
+    form_result.innerText = '';
+
+    const elem = document.createElement(type.value);
+    elem.innerText = content.value;
+    elem.style.color = color.value;
+
+    form_result.append(elem);
+
+    type.value = '';
+    content.value = '';
+    color.value = '';
+})
+
